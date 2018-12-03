@@ -187,6 +187,9 @@ class Server:
         Recv msg from client
         """
         packet = conn.recv(20000)
+        # Client terminated connection
+        if packet.decode('ascii') == "":
+            sys.exit()
         packet = decode_dict(packet)
 
         encrypted = packet['msg']

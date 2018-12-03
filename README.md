@@ -10,4 +10,6 @@ To run:
 1. `$ python3 server.py`
 2. `$ python3 client.py`
 
-Give it a couple seconds to handshake, then you can send messages back and forth between client and server
+Give it a couple seconds to handshake, then you can send messages back and forth between client and server.
+
+To terminate the connection, either the client or server can send the message "quit".

@@ -185,5 +185,6 @@ if __name__ == "__main__":
         msg = input("Enter msg to send: ")
         if msg == "quit":
             client.end_conn()
+            break
         client.send_msg(msg)
         client.recv_msg()
