@@ -71,4 +71,5 @@ class CramerShoupKeys:
         return e*w_inv%self.p
 
 
-kr = generate()
+if __name__ == '__main__':
+    kr = generate()
