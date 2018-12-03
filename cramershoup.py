@@ -14,18 +14,18 @@ def generate(hash_func, N=2048):
     q = p // 2
     
     while True:
-        g1 = pow(random.randint(2, p - 2), p//q, p)
+        g1 = pow(secrets.randbelow(p - 3) + 2, p//q, p)
         if g1 != 1: break
     
     while True:
-        g2 = pow(random.randint(2, p - 2), p//q, p)
+        g2 = pow(secrets.randbelow(p - 3) + 2, p//q, p)
         if g2 != 1 and g2 != g1: break
     
-    x1 = random.randint(2, q - 1)
-    x2 = random.randint(2, q - 1)
-    y1 = random.randint(2, q - 1)
-    y2 = random.randint(2, q - 1)
-    z  = random.randint(2, q - 1)
+    x1 = secrets.randbelow(q - 2) + 2
+    x2 = secrets.randbelow(q - 2) + 2
+    y1 = secrets.randbelow(q - 2) + 2
+    y2 = secrets.randbelow(q - 2) + 2
+    z  = secrets.randbelow(q - 2) + 2
     
     c = pow(g1, x1, p) * pow(g2, x2, p) % p
     d = pow(g1, y1, p) * pow(g2, y2, p) % p
@@ -72,4 +72,5 @@ class CramerShoupKeys:
 
 
 if __name__ == '__main__':
-    kr = generate()
+    pass
+    
